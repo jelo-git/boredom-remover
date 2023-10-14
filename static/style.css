@@ -1,0 +1,101 @@
+:root{
+    --border: #000000;
+    --background-cold: #282A3A;
+    --background-warm: #3a3028;
+    --background-active: #735F32;
+    --accent: #C69749;
+    --accent-2: #96c649;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-cold);
+}
+
+h1{
+    text-align: center;
+}
+
+.hidden{
+    display: none !important;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row{
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    opacity: 40%;
+}
+.active{
+    opacity: 80%;
+}
+.entered{
+    opacity: 100%;
+}
+
+.contains{
+    background-color: var(--accent) !important;
+}
+.correct{
+    background-color: var(--accent-2) !important;
+}
+
+.card{
+    display: flex;
+    margin: 10px;
+    border: 2px solid var(--border);
+    border-radius: 25px;
+    background-color: var(--background-warm);
+    width: 90px;
+    height: 90px;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    font-size: 500%;
+}
+
+.shake{ 
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+.shake>*{
+    box-shadow: 0px 0px 20px red ;
+}
+@keyframes shake{
+    25%{transform: translate(2px, 2px) rotate(1deg);}
+    50%{transform: translate(-3px, -2px) rotate(-2deg);}
+    75%{transform: translate(3px, -1px) rotate(2deg);}
+    100%{transform: translate(-2px,1px) rotate(-1deg);}
+}
+
+.outcome{
+    background-color: var(--background-warm);
+    display: flex;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px var(--border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.outcome>*{
+    color: var(--accent);
+}
+.outcome>h1{
+    font-weight: bolder;
+}
+.outcome>span{
+    opacity: 70%;
+}
